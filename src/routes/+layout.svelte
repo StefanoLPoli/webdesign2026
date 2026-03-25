@@ -9,3 +9,13 @@
 </svelte:head>
 
 {@render children()}
+
+<footer>
+	<p>&copy; Polimi 2026. All rights reserved.</p>
+</footer>
+
+<style>
+	:global(p) {
+        color: deeppink;
+    }
+</style>
