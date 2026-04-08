@@ -11,6 +11,10 @@
 <ClicksCounter bind:initialCount={count} />
 {#if count > 10 && count < 20}
 	<p>Count from parent is {count}</p>
+{:else if count == 30}
+	<p>Daje Roma!</p>
+{:else}
+	<p>Count from parent is {count}, but it should be between 10 and 20 to be shown</p>
 {/if}
 
 <CanvasSquare />
