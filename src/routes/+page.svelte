@@ -1,7 +1,8 @@
 <script>
+    import CanvasSquare from "$lib/components/CanvasSquare.svelte";
     import ClicksCounter from "$lib/components/ClicksCounter.svelte";
 
-    let count = $state(10);
+    let count = $state(5);
 </script>
 
 <h1>Welcome to SvelteKit</h1>
@@ -9,6 +10,8 @@
 
 <ClicksCounter bind:initialCount={count} />
 <p>Count from parent is {count}</p>
+
+<CanvasSquare />
 
 <style>
 	h1 {
