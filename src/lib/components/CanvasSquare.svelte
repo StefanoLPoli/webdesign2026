@@ -1,23 +1,25 @@
 <script>
     let size = $state(50);
-    let color = $state("ff3e00");
+    let color = $state("#556312");
 
-    let canvas = document.querySelector("canvas");
+    let canvas;
+    
+    $effect(() => {
+        const context = canvas.getContext("2d");
+        context.clearRect(0, 0, canvas.width, canvas.height);
 
-    const context = canvas.getContext("2d");
-    context.clearRect(0, 0, canvas.width, canvas.height);
-
-    context.fillStyle = color;
-    context.fillRect(0, 0, size, size);
+        context.fillStyle = color;
+        context.fillRect(0, 0, size, size);
+    });
 </script>
 
 <h3>Canvas Square</h3>
 
 <article>
-    <canvas width="100" height="100"></canvas>
+    <canvas bind:this={canvas} width="100" height="100"></canvas>
     <nav>
-        <label>Size: <input type="range"></label>
-        <label>Color: <input type="color"></label>
+        <label>Size: <input type="range" bind:value={size}></label>
+        <label>Color: <input type="color" bind:value={color}></label>
     </nav>
 </article>
 
